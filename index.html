@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>微信网页版（伪）</title>
+    <style>
+        .myfont{  
+            width: 100%;  
+            height: auto;  
+            word-wrap:normal;  
+            word-break:normal;  
+            overflow: hidden;  }
+        .button {
+            cursor: pointer;
+            z-index:0;
+            position: absolute;
+        }
+        .mask 
+        {
+            z-index:10;
+            position: fixed;
+            top: 0;
+            right: 0; 
+            bottom: 0; 
+            left: 0;
+            background:
+            rgba(0,0,0,.8);
+        }
+        .light 
+        {
+            z-index:11;
+            left: 700px;
+            top: 250px;
+            position:absolute;
+        }
+        .mytable 
+        {
+            display:flex;
+            flex-wrap:wrap;
+        }
+    </style>
+</head>
+<body style="background-color:lightslategray;">
+   
+    <table style="border-collapse:separate; border-spacing:0px 0px;">
+        <tr>
+            <td>
+                <div id="menu" style="background-color:rgb(40,41,44);height:840px;width:100px;float:left;">
+                    <div id="info1" style="display:none;position:absolute;left:50px; top:50px;z-index:4">
+                        <img src="信息.jpg">
+                    </div>
+                    <img class="button" onclick="showinfo();" style="display:inline-block;position:absolute;left:20px; top:20px;" src="头像.jpg" />
+                    <img class="button" onclick="showitem();" style="display:inline-block;position:absolute;left:20px; top:120px;" src="1.png" />
+                    <img class="button" onclick="showmyself();" style="display:inline-block;position:absolute;left:20px; top:210px;" src="2.png" />
+                    <img class="button" onclick="showchat();" style="display:inline-block;position:absolute;left:20px; top:320px;" src="3.jpg" />
+                </div>
+            </td>
+            <td>
+                <div id="lable0" style="background-color:rgb(230,229,229);height:840px;width:402px;float:left;">
+                    <div id="faker"  style="position:absolute;left:111px; top:9px;z-index:3">
+                        <img src="伪装.png">
+                    </div>
+                    <div id="item" style="display:none;position:absolute;left:107px; top:102px;z-index:3">
+                        正在施工~
+                    </div>
+                    <div id="myself" style="display:none;position:absolute;left:110px; top:102px;z-index:3">
+                        <img src="信息入口.png"onclick="showinfomation()">
+                    </div>
+                    <div id="nothing" style="display:none;position:absolute;left:110px; top:102px;z-index:3">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="链接.jpg">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="相册.jpg"onclick="showphoto()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="笔记.jpg"onclick="showdaliy()">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div id="txt" style="background-color:rgb(245,245,245);height:840px;width:800px;float:left;">
+                    <div id="photo" style="display:none;position:absolute;left:520px; top:102px;z-index:10">
+                        <div id="mask" class="mask" style="display:none;z-index:10;" onclick="unlightning()">
+                        </div>
+                        <img id="photo1" src="自拍1.jpg" onclick="lightning('photo1')" style="z-index:3">
+                        <img id="photo2" src="自拍2.jpg" onclick="lightning('photo2')" style="z-index:3">
+                        <img id="photo3" src="自拍3.jpg" onclick="lightning('photo3')" style="z-index:3">
+                    </div>
+                    <div id="infomation" style="display:none;position:absolute;left:520px; top:102px;">
+                        <img src="图片1.png"><br>
+                        <div id="infomation2" style="position:absolute;left:240px; top:202px;">
+                            <font size="8" color="gery">Email:lshabaddon@163.com</font><br>
+                            <font size="9" color="gery">QQ:976365591</font><br>
+                        </div>
+                        来自软件工程系的<br>
+                        七字班<font size="4" color="red">老腊肉</font><br>
+                        特长:<br>
+                        宿舍歌神<font color="green">++</font><br>
+                        热衷健身<font color="green">+</font><br>
+                        乒乓球业余爱好者<font color="green">+</font><br>
+                        游戏能力<font color="red">--</font><br>
+                        能力：<br>
+                        Coding能力<font color="green">++</font><br>
+                        文学哲学<font color="green">+</font><br>
+                        古代诗词<font color="red">--</font><br>
+                        ddl之前的Coding能力<font color="green">+++++++++</font><br>
+                    </div>
+                    <div id="daliy" style="display:none;position:absolute;left:520px; top:102px;width:600px;z-index:10">
+                        <div >
+                            <strong>2019年7月3日</strong><br>
+                            <font size="5"color="bule"onclick="showdaliy1()">前端设计感想记录(点击收起展开)</font>
+                            <div id="daliy1" style="display:none;"class="myfont">
+                             希望上这门课可以学到一点东西。毕竟快大三了，感觉课内掌握的东西还是不足，
+                            马上就要开始实习了（本人没有保研的想法，想快速学点能用的东西实用，自认科研实力不足）
+                            这门课和之前学的概念性课程相比实用性更强，希望能通过这门课程掌握一门技术吧。之前对前端
+                            没有什么独特的理解，觉得前端这东西技术性不强，纯粹是一些堆砌的东西，实操起来发现不是想象
+                            的那么简单。希望在课上老师能够讲的生动有趣一些，把课程进度放平均一点就好了~
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </td>
+        </tr>
+    </table>
+    <script>
+        const img1=document.getElementById('info1');
+        const img2=document.getElementById('item');
+        const img3=document.getElementById('myself');
+        const img4=document.getElementById('nothing');
+        const picture1=document.getElementById('pic1');
+        const picture2=document.getElementById('pic2');
+        const picture3 = document.getElementById('pic3');
+        const mask = document.getElementById('mask');
+        const photo = document.getElementById('photo');
+        const info = document.getElementById('infomation');
+        const txt = document.getElementById('txt');
+        const daliy = document.getElementById('daliy');
+        const daliy1=document.getElementById('daliy1');
+        var lightnow, lightnowx, lightnowy, lightnowpos, lightnowh, lightnoww;
+        var flag = 0;
+        function showinfo()
+        {
+            if(img1.style.display=='none')img1.style.display='';
+            else img1.style.display='none';
+        }
+        function showdaliy1()
+        {
+            if (daliy1.style.display == 'none') daliy1.style.display = '';
+            else daliy1.style.display='none';
+        }
+        function showitem()
+        {
+            img2.style.display='';
+            img3.style.display='none';
+            img4.style.display = 'none';
+            photo.style.display = 'none';
+            info.style.display = 'none';
+            daliy.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(245,245,245)';
+        }
+        function showmyself()
+        {
+            img3.style.display='';
+            img2.style.display='none';
+            img4.style.display = 'none';
+            photo.style.display = 'none';
+            info.style.display = 'none';
+            daliy.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(245,245,245)';
+        }
+        function showchat()
+        {
+            img4.style.display='';
+            img2.style.display='none';
+            img3.style.display = 'none';
+            photo.style.display = 'none';
+            info.style.display = 'none';
+            daliy.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(245,245,245)';
+        }
+        function showphoto()
+        {
+            photo.style.display = '';
+            daliy.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(230,230,210)';
+    }
+        function showdaliy()
+        {
+            daliy.style.display = '';
+            photo.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(210,210,210)';
+        }
+        function showinfomation()
+        {
+            info.style.display = '';
+            daliy.style.display = 'none';
+            txt.style.backgroundColor = 'rgb(250,250,210)';
+        }
+    function lightning(a)
+    {
+        if (flag == 0)
+        {
+            flag = 1;
+            var elem = document.getElementById(a);
+            lightnowx = elem.style.left;
+            lightnowy = elem.style.top;
+            lightnowpos = elem.style.position;
+            lightnowh = elem.style.height;
+            lightnoww = elem.style.width;
+            elem.style.position = 'absolute';
+            elem.style.top = '100px';
+            elem.style.left = '200px';
+            elem.style.height = '400px';
+            elem.style.width = '400px';
+            elem.style.zIndex = 11;
+            mask.style.display = '';
+            lightnow = document.getElementById(a);
+        }
+       
+    }
+    function unlightning()
+    {
+        flag = 0;
+        mask.style.display = 'none';
+        lightnow.style.left =lightnowx;
+        lightnow.style.top = lightnowy;
+        lightnow.style.height = lightnowh;
+        lightnow.style.width = lightnoww;
+        lightnow.style.position = lightnowpos;
+        lightnow.style.zIndex = 3;
+    }
+    </script>
+</body>
+</html>
