@@ -116,15 +116,29 @@
                         ddl之前的Coding能力<font color="green">+++++++++</font><br>
                     </div>
                     <div id="daliy" style="display:none;position:absolute;left:520px; top:102px;width:600px;z-index:10">
-                        <div >
+                        <div>
                             <strong>2019年7月3日</strong><br>
-                            <font size="5"color="bule"onclick="showdaliy1()">前端设计感想记录(点击收起展开)</font>
-                            <div id="daliy1" style="display:none;"class="myfont">
-                             希望上这门课可以学到一点东西。毕竟快大三了，感觉课内掌握的东西还是不足，
-                            马上就要开始实习了（本人没有保研的想法，想快速学点能用的东西实用，自认科研实力不足）
-                            这门课和之前学的概念性课程相比实用性更强，希望能通过这门课程掌握一门技术吧。之前对前端
-                            没有什么独特的理解，觉得前端这东西技术性不强，纯粹是一些堆砌的东西，实操起来发现不是想象
-                            的那么简单。希望在课上老师能够讲的生动有趣一些，把课程进度放平均一点就好了~
+                            <font size="5" color="bule" onclick="showdaliy1()">前端设计感想记录(点击收起展开)</font>
+                            <div id="daliy1" style="display:none;" class="myfont">
+                                希望上这门课可以学到一点东西。毕竟快大三了，感觉课内掌握的东西还是不足，
+                                马上就要开始实习了（本人没有保研的想法，想快速学点能用的东西实用，自认科研实力不足）
+                                这门课和之前学的概念性课程相比实用性更强，希望能通过这门课程掌握一门技术吧。之前对前端
+                                没有什么独特的理解，觉得前端这东西技术性不强，纯粹是一些堆砌的东西，实操起来发现不是想象
+                                的那么简单。希望在课上老师能够讲的生动有趣一些，把课程进度放平均一点就好了~
+                            </div>
+                            <br>
+                            <strong>2019年7月7日</strong><br>
+                            <font size="5" color="bule" onclick="showdaliy2()">第一次作业感想及js使用心得(点击收起展开)</font>
+                            <div id="daliy2" style="display:none;" class="myfont">
+                                第一题，没啥难的，用一个日期类就好啦。比较时间前后自己写了个冒泡，然后直接字符串去掉数字之外的字符
+                                直接比较就可以了。
+                                第二题，树的展开，其实我偷懒了，在读入树的时候创建了作弊的数组，然后直接输出的，正常做的话应该是建一个
+                                链表，不过js建立链表应该也直接用类就好了
+                                第三题，好像和第二题差别不大，dfs搜索一下，返回数组结构就可以了。注意判断数组和字符，我用的是array自带的方法
+                                其实typeof也可以。宿舍大佬一行代码就敲完了，好厉害。
+                                第四题，纯粹广搜了，实在想不到什么复杂度低的方法，推箱子问题好像不是一个简单方法可以解决的？上网搜了半天，都是
+                                简单的bfs，最多剪枝一下什么的。
+                                总结一下，js真的很不严格，很多想当然的写法竟然真的是正确的，动态语言真的和c++有很大区别，函数里面还能套函数真的有趣
                             </div>
                         </div>
                     </div>
@@ -157,6 +171,11 @@
         {
             if (daliy1.style.display == 'none') daliy1.style.display = '';
             else daliy1.style.display='none';
+        }
+        function showdaliy2()
+        {
+            if (daliy2.style.display == 'none') daliy2.style.display = '';
+            else daliy2.style.display='none';
         }
         function showitem()
         {
